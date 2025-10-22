@@ -1,0 +1,33 @@
+:root{
+  --vz-bg:#0b1021; --vz-card:#0e1531; --vz-border:#1b2347;
+  --vz-text:#dbe5ff; --vz-muted:#9fb2d7; --vz-accent:#6c8bff; --vz-accent-2:#22d3ee;
+  --vz-sidebar:#0a0f29; --vz-sidebar-active:#1e2a55; --vz-topbar:#0d1430;
+}
+html,body{height:100%} body{background:var(--vz-bg);color:var(--vz-text)}
+.card{background:var(--vz-card);border:1px solid var(--vz-border);border-radius:14px}
+.table{--bs-table-color:var(--vz-text);--bs-table-bg:transparent;border-color:var(--vz-border)}
+.form-control,.form-select{background:#0a1226;border-color:var(--vz-border);color:var(--vz-text)}
+.form-control:focus,.form-select:focus{border-color:var(--vz-accent);box-shadow:none}
+.vz-wrapper{display:flex;min-height:100vh}
+.vz-sidebar{width:260px;flex:0 0 260px;background:var(--vz-sidebar);border-right:1px solid var(--vz-border);position:sticky;top:0;height:100vh;overflow:auto}
+.vz-brand{display:flex;align-items:center;gap:.5rem;padding:14px 16px;border-bottom:1px solid var(--vz-border);background:var(--vz-topbar)}
+.vz-brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--vz-accent),var(--vz-accent-2))}
+.vz-nav{padding:8px}
+.vz-link{display:flex;align-items:center;gap:.6rem;padding:10px 12px;border-radius:10px;color:var(--vz-text);text-decoration:none}
+.vz-link:hover{background:#0f1a3d}
+.vz-link.active{background:var(--vz-sidebar-active)}
+.vz-link .bi{opacity:.9}
+.vz-content{flex:1;min-width:0}
+.vz-topbar{position:sticky;top:0;z-index:10;background:var(--vz-topbar);border-bottom:1px solid var(--vz-border)}
+.vz-topbar .bar{display:flex;align-items:center;gap:12px;padding:10px 16px}
+.vz-topbar .btn{border-color:var(--vz-border)}
+.vz-page{padding:18px;max-width:1200px;margin:0 auto}
+.vz-stats .card{background:linear-gradient(180deg,rgba(108,139,255,.12),rgba(34,211,238,.06)), var(--vz-card)}
+.badge-net{font-size:.9rem}
+.text-muted{color:var(--vz-muted)!important}
+@media (max-width: 991.98px){
+  .vz-sidebar{position:fixed;left:-280px;top:0;height:100vh;z-index:1000;transition:all .25s}
+  .vz-sidebar.show{left:0}
+  .vz-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999}
+  .vz-overlay.show{display:block}
+}
