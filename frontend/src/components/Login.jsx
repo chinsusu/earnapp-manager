@@ -93,12 +93,6 @@ export default function Login({ onLoginSuccess }) {
               )}
             </button>
           </form>
-
-          <div className="text-center mt-4">
-            <small className="text-muted">
-              Default: Admin / Calomam@12@@
-            </small>
-          </div>
         </div>
       </div>
     </div>
