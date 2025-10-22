@@ -590,3 +590,51 @@ h1, h2, h3, h4, h5, h6 {
 .table-responsive table {
   background: transparent;
 }
+
+/* Form section title improvements */
+.form-section-title {
+  color: var(--vuexy-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.875rem;
+  padding-left: 0;
+  margin-left: 0;
+  border-bottom: 1px solid var(--vuexy-border);
+  letter-spacing: -0.01em;
+}
+
+/* Row spacing in forms */
+.form-section .row {
+  margin-bottom: 1rem;
+}
+
+.form-section .row:last-child {
+  margin-bottom: 0;
+}
+
+/* Column spacing */
+.form-section [class*="col-"] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Form group spacing */
+.form-section .mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* Button alignment */
+.form-section .text-end,
+.form-section .d-flex.justify-content-end {
+  margin-top: 1rem;
+}
+
+/* Consistent spacing for all form elements */
+.form-section > *:first-child {
+  margin-top: 0;
+}
+
+.form-section > *:last-child {
+  margin-bottom: 0;
+}
