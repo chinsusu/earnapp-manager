@@ -137,6 +137,7 @@ export default function EmailTab(){
           </div>
         </div>
 
+      </div>
       <div className="vuexy-card">
         <div>
           <h3 className="h5">Danh sách PayPal</h3>
@@ -162,7 +163,6 @@ export default function EmailTab(){
             </table>
           </div>
         </div>
-      </div>
       </div>
 
       <div className="vuexy-card">
