@@ -136,6 +136,33 @@ export default function EmailTab(){
             </table>
           </div>
         </div>
+
+      <div className="vuexy-card">
+        <div>
+          <h3 className="h5">Danh sách PayPal</h3>
+          <div className="table-responsive">
+            <table className="table table-sm table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>PayPal (email)</th><th>Ghi chú</th><th>Ngày tạo</th><th className="text-end">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paypals.map(p => (
+                  <tr key={p.id}>
+                    <td className="fw-medium">{p.address}</td>
+                    <td>{p.note || '-'}</td>
+                    <td className="text-secondary">{p.created_at}</td>
+                    <td className="text-end">
+                      <button className="btn btn-sm btn-outline-danger" onClick={()=>delPaypal(p.id)}>Xoá</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
       </div>
 
       <div className="vuexy-card">
