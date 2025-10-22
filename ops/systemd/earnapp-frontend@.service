@@ -1,0 +1,22 @@
+[Unit]
+Description=Earnapp Frontend (Vite preview)
+After=network.target earnapp-backend@%i.service
+Requires=earnapp-backend@%i.service
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=%h/Earnapp-manager/frontend
+Environment=FE_PORT=5173
+ExecStartPre=/bin/bash -lc 'if [ ! -d node_modules ]; then npm ci; fi'
+ExecStartPre=/bin/bash -lc 'if [ ! -d dist ]; then npm run build; fi'
+ExecStart=/bin/bash -lc 'npm run preview -- --host 0.0.0.0 --port ${FE_PORT}'
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

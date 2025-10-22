@@ -1,0 +1,11 @@
+:root{}
+body{min-height:100vh;}
+.table thead th{white-space:nowrap;}
+.badge-net{font-size:.9rem;}
+.form-note{min-width:200px}
+.nav-scroll{overflow:auto; white-space:nowrap;}
+.card h3, .card h4{margin-bottom:.75rem}
+/* Fix inputs in small screens */
+@media (max-width: 576px){
+  .table-responsive{font-size:.95rem}
+}
