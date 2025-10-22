@@ -1,0 +1,22 @@
+[Unit]
+Description=Earnapp Manager Backend (Express + SQLite)
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=%h/EarnApp-Manager/backend
+Environment=NODE_ENV=production
+Environment=PORT=4000
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
