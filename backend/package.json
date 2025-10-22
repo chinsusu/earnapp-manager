@@ -1,0 +1,16 @@
+{
+  "name": "epi-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Email-PayPal-Income backend (Express + better-sqlite3)",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.11",
+    "express": "^4.19.2"
+  }
+}
