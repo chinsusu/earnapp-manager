@@ -220,7 +220,7 @@ app.get('/api/income', (req,res) => {
 
 app.post('/api/income', (req,res) => {
   const { date, email_id, paypal_id=null, gross, fee=0, note=null } = req.body;
-  if (!date or !email_id or gross == null) return err(res, 'date, email_id, gross are required');
+  if (!date || !email_id || gross == null) return err(res, 'date, email_id, gross are required');
   const net = Number(gross) - Number(fee || 0);
   try {
     const r = db.prepare('INSERT INTO income (date, email_id, paypal_id, gross, fee, net, note) VALUES (?, ?, ?, ?, ?, ?, ?)')
