@@ -638,3 +638,97 @@ h1, h2, h3, h4, h5, h6 {
 .form-section > *:last-child {
   margin-bottom: 0;
 }
+
+/* Form section title - flush left alignment */
+.form-section-title {
+  color: var(--vuexy-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  padding: 0 0 0.875rem 0;
+  border-bottom: 1px solid var(--vuexy-border);
+  letter-spacing: -0.01em;
+}
+
+/* Remove any inherited padding from form-section */
+.form-section {
+  background: var(--vuexy-card-bg);
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--vuexy-shadow);
+}
+
+/* Ensure form labels are also flush left */
+.form-section .form-label {
+  color: var(--vuexy-text-dark);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  display: block;
+}
+
+/* Row spacing in forms */
+.form-section .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-section .row:last-child {
+  margin-bottom: 0;
+}
+
+/* Column spacing */
+.form-section [class*="col-"] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Form group spacing */
+.form-section .mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* Button alignment */
+.form-section .text-end,
+.form-section .d-flex.justify-content-end {
+  margin-top: 1rem;
+}
+
+/* Consistent spacing for all form elements */
+.form-section > *:first-child {
+  margin-top: 0;
+}
+
+.form-section > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Table/List card titles */
+.vuexy-card .card-title,
+.card .card-title {
+  color: var(--vuexy-heading);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card header spacing */
+.vuexy-card .card-header,
+.card .card-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--vuexy-border);
+  color: var(--vuexy-heading);
+  padding: 1.25rem 1.5rem;
+  margin: 0;
+}
+
+.vuexy-card .card-body,
+.card .card-body {
+  padding: 1.5rem;
+  margin: 0;
+}
