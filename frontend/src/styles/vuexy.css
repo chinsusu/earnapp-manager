@@ -1,0 +1,371 @@
+/* Vuexy-inspired color scheme and styles */
+:root {
+  /* Primary colors - Purple theme */
+  --vuexy-primary: #7367f0;
+  --vuexy-primary-dark: #5e50ee;
+  --vuexy-primary-light: #9089f8;
+  
+  /* Secondary & accent */
+  --vuexy-secondary: #82868b;
+  --vuexy-success: #28c76f;
+  --vuexy-danger: #ea5455;
+  --vuexy-warning: #ff9f43;
+  --vuexy-info: #00cfe8;
+  
+  /* Background colors - Dark theme */
+  --vuexy-bg: #25293c;
+  --vuexy-bg-light: #2f3349;
+  --vuexy-bg-lighter: #383b52;
+  --vuexy-card-bg: #2f3349;
+  --vuexy-sidebar-bg: #2b2c40;
+  
+  /* Text colors */
+  --vuexy-text: #d0d2d6;
+  --vuexy-text-muted: #a5a8ad;
+  --vuexy-heading: #dfe1e3;
+  
+  /* Border & divider */
+  --vuexy-border: #3b4253;
+  
+  /* Shadows */
+  --vuexy-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  --vuexy-shadow-lg: 0 6px 30px 0 rgba(34, 41, 47, 0.2);
+}
+
+/* Body & base */
+body {
+  background: var(--vuexy-bg) !important;
+  color: var(--vuexy-text) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+}
+
+/* Sidebar */
+.vuexy-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--vuexy-sidebar-bg);
+  border-right: 1px solid var(--vuexy-border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1030;
+  transition: all 0.25s ease;
+}
+
+.vuexy-sidebar .sidebar-brand {
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--vuexy-border);
+}
+
+.vuexy-sidebar .sidebar-brand h4 {
+  color: var(--vuexy-primary);
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.vuexy-sidebar .sidebar-menu {
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+.vuexy-sidebar .menu-item {
+  margin: 0.25rem 1rem;
+}
+
+.vuexy-sidebar .menu-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--vuexy-text-muted);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.vuexy-sidebar .menu-link:hover {
+  background: var(--vuexy-bg-lighter);
+  color: var(--vuexy-text);
+}
+
+.vuexy-sidebar .menu-link.active {
+  background: linear-gradient(118deg, var(--vuexy-primary), var(--vuexy-primary-light));
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(115, 103, 240, 0.4);
+}
+
+.vuexy-sidebar .menu-link i {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Topbar */
+.vuexy-topbar {
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 70px;
+  background: var(--vuexy-card-bg);
+  border-bottom: 1px solid var(--vuexy-border);
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.vuexy-topbar .topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vuexy-topbar .btn-toggle {
+  background: transparent;
+  border: none;
+  color: var(--vuexy-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+/* Main content */
+.vuexy-content {
+  margin-left: 260px;
+  margin-top: 70px;
+  padding: 1.5rem;
+  min-height: calc(100vh - 70px);
+  transition: all 0.25s ease;
+}
+
+/* Cards */
+.vuexy-card {
+  background: var(--vuexy-card-bg);
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--vuexy-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.vuexy-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--vuexy-border);
+  padding: 1.25rem 1.5rem;
+}
+
+.vuexy-card .card-body {
+  padding: 1.5rem;
+}
+
+.vuexy-card .card-title {
+  color: var(--vuexy-heading);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* Stats cards */
+.vuexy-stat-card {
+  background: var(--vuexy-card-bg);
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vuexy-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--vuexy-primary);
+}
+
+.vuexy-stat-card.success::before { background: var(--vuexy-success); }
+.vuexy-stat-card.danger::before { background: var(--vuexy-danger); }
+.vuexy-stat-card.warning::before { background: var(--vuexy-warning); }
+.vuexy-stat-card.info::before { background: var(--vuexy-info); }
+
+.vuexy-stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.vuexy-stat-card.primary .stat-icon {
+  background: rgba(115, 103, 240, 0.12);
+  color: var(--vuexy-primary);
+}
+
+.vuexy-stat-card.success .stat-icon {
+  background: rgba(40, 199, 111, 0.12);
+  color: var(--vuexy-success);
+}
+
+.vuexy-stat-card.warning .stat-icon {
+  background: rgba(255, 159, 67, 0.12);
+  color: var(--vuexy-warning);
+}
+
+.vuexy-stat-card.info .stat-icon {
+  background: rgba(0, 207, 232, 0.12);
+  color: var(--vuexy-info);
+}
+
+.vuexy-stat-card .stat-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--vuexy-heading);
+  margin-bottom: 0.25rem;
+}
+
+.vuexy-stat-card .stat-label {
+  color: var(--vuexy-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Buttons */
+.btn-vuexy-primary {
+  background: linear-gradient(118deg, var(--vuexy-primary), var(--vuexy-primary-light));
+  border: none;
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(115, 103, 240, 0.4);
+}
+
+.btn-vuexy-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(115, 103, 240, 0.5);
+  color: #fff;
+}
+
+/* Tables */
+.vuexy-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.vuexy-table thead th {
+  background: var(--vuexy-bg-lighter);
+  color: var(--vuexy-text-muted);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--vuexy-border);
+}
+
+.vuexy-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--vuexy-border);
+  color: var(--vuexy-text);
+}
+
+.vuexy-table tbody tr:hover {
+  background: var(--vuexy-bg-lighter);
+}
+
+/* Forms */
+.vuexy-form-control {
+  background: var(--vuexy-bg-lighter);
+  border: 1px solid var(--vuexy-border);
+  color: var(--vuexy-text);
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.vuexy-form-control:focus {
+  background: var(--vuexy-bg-lighter);
+  border-color: var(--vuexy-primary);
+  color: var(--vuexy-text);
+  box-shadow: 0 0 0 0.2rem rgba(115, 103, 240, 0.15);
+}
+
+.vuexy-form-label {
+  color: var(--vuexy-text);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Badge */
+.vuexy-badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.vuexy-badge.primary {
+  background: rgba(115, 103, 240, 0.12);
+  color: var(--vuexy-primary);
+}
+
+.vuexy-badge.success {
+  background: rgba(40, 199, 111, 0.12);
+  color: var(--vuexy-success);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .vuexy-sidebar {
+    left: -260px;
+  }
+  
+  .vuexy-sidebar.show {
+    left: 0;
+  }
+  
+  .vuexy-topbar {
+    left: 0;
+  }
+  
+  .vuexy-topbar .btn-toggle {
+    display: block;
+  }
+  
+  .vuexy-content {
+    margin-left: 0;
+  }
+}
+
+/* Scrollbar */
+.vuexy-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vuexy-sidebar::-webkit-scrollbar-track {
+  background: var(--vuexy-sidebar-bg);
+}
+
+.vuexy-sidebar::-webkit-scrollbar-thumb {
+  background: var(--vuexy-bg-lighter);
+  border-radius: 10px;
+}
+
+.vuexy-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--vuexy-border);
+}

@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
-import VelzonLayout from './layout/VelzonLayout'
+import Sidebar from './layout/Sidebar'
+import Topbar from './layout/Topbar'
 import EmailTab from './components/EmailTab'
 import IncomeTab from './components/IncomeTab'
 import ReportsTab from './components/ReportsTab'
 
-export default function App(){
+export default function App() {
   const [tab, setTab] = useState('email')
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
   return (
-    <VelzonLayout active={tab} onChangeTab={setTab}>
-      {tab==='email' && <EmailTab />}
-      {tab==='income' && <IncomeTab />}
-      {tab==='reports' && <ReportsTab />}
-    </VelzonLayout>
+    <div className="vuexy-layout">
+      <Sidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        activeTab={tab}
+        onTabChange={setTab}
+      />
+      <Topbar onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      <div className="vuexy-content">
+        {tab === 'email' && <EmailTab />}
+        {tab === 'income' && <IncomeTab />}
+        {tab === 'reports' && <ReportsTab />}
+      </div>
+    </div>
   )
 }

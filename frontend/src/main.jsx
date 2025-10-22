@@ -8,8 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // Custom styles
-import './styles/custom.css'
-import './styles/velzon.css'
+import './styles/vuexy.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
