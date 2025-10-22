@@ -551,3 +551,42 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--vuexy-heading);
 }
+
+/* List/Table container styling */
+.table-responsive {
+  background: var(--vuexy-card-bg);
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--vuexy-shadow);
+}
+
+.card {
+  background: var(--vuexy-card-bg) !important;
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--vuexy-shadow);
+}
+
+.card .card-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--vuexy-border);
+  color: var(--vuexy-heading);
+}
+
+.card .card-body {
+  background: transparent !important;
+  color: var(--vuexy-text);
+}
+
+.card .card-title {
+  color: var(--vuexy-heading);
+  font-weight: 600;
+}
+
+/* Ensure all table wrappers have proper background */
+.vuexy-card table,
+.card table,
+.table-responsive table {
+  background: transparent;
+}
