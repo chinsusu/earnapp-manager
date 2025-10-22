@@ -434,3 +434,57 @@ body {
 .bg-primary {
   background-color: var(--vuexy-primary) !important;
 }
+
+/* Form sections with background */
+.form-section {
+  background: var(--vuexy-card-bg);
+  border: 1px solid var(--vuexy-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--vuexy-shadow);
+}
+
+.form-section-title {
+  color: var(--vuexy-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--vuexy-border);
+}
+
+.form-section .form-label {
+  color: var(--vuexy-text);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-section .form-control,
+.form-section .form-select {
+  background: var(--vuexy-bg-light);
+  border: 1px solid var(--vuexy-border);
+  color: var(--vuexy-text);
+  border-radius: 0.5rem;
+}
+
+.form-section .form-control:focus,
+.form-section .form-select:focus {
+  background: var(--vuexy-bg-light);
+  border-color: var(--vuexy-primary);
+  box-shadow: 0 0 0 0.2rem rgba(118, 159, 205, 0.15);
+}
+
+/* Section with colored accent */
+.form-section.primary {
+  border-left: 4px solid var(--vuexy-primary);
+}
+
+.form-section.success {
+  border-left: 4px solid var(--vuexy-success);
+}
+
+.form-section.info {
+  border-left: 4px solid var(--vuexy-info);
+}

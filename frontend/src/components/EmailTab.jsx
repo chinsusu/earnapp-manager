@@ -39,8 +39,8 @@ export default function EmailTab(){
   return (
     <div className="d-grid gap-3">
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Thêm Email</h3>
           <div className="row g-3 align-items-end">
             <div className="col-12 col-md-4">
@@ -66,8 +66,8 @@ export default function EmailTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Thêm PayPal</h3>
           <div className="row g-3 align-items-end">
             <div className="col-12 col-md-5">
@@ -85,8 +85,8 @@ export default function EmailTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Gán PayPal cho Email</h3>
           <div className="row g-3 align-items-end">
             <div className="col-12 col-md-5">
@@ -110,8 +110,8 @@ export default function EmailTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Danh sách Email</h3>
           <div className="table-responsive">
             <table className="table table-sm table-hover align-middle">
@@ -138,8 +138,8 @@ export default function EmailTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Liên kết Email ↔ PayPal</h3>
           <div className="table-responsive">
             <table className="table table-sm table-striped align-middle">

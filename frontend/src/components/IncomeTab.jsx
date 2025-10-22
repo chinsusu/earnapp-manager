@@ -42,8 +42,8 @@ export default function IncomeTab(){
 
   return (
     <div className="d-grid gap-3">
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Thêm dòng thu nhập</h3>
           <div className="row g-3 align-items-end">
             <div className="col-12 col-sm-6 col-lg-2">
@@ -87,8 +87,8 @@ export default function IncomeTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Lọc</h3>
           <div className="row g-3 align-items-end">
             <div className="col-6 col-md-3">
@@ -120,8 +120,8 @@ export default function IncomeTab(){
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-body">
+      <div className="vuexy-card">
+        <div>
           <h3 className="h5">Danh sách</h3>
           <div className="table-responsive">
             <table className="table table-hover table-sm align-middle">
