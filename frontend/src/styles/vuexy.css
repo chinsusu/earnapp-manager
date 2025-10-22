@@ -13,7 +13,7 @@
   --vuexy-info: #769fcd;
   
   /* Background colors - Light blue theme */
-  --vuexy-bg: #f7fbfc;
+  --vuexy-bg: #f8f7fa;
   --vuexy-bg-light: #ffffff;
   --vuexy-bg-lighter: #d6e6f2;
   --vuexy-card-bg: #ffffff;
@@ -28,8 +28,8 @@
   --vuexy-placeholder: #b9b9c3;
   
   /* Border & divider */
-  --vuexy-border: #d8d6de;
-  --vuexy-input-border: #d8d6de;
+  --vuexy-border: #dbdade;
+  --vuexy-input-border: #dbdade;
   
   /* Shadows */
   --vuexy-shadow: 0 2px 6px rgba(118, 159, 205, 0.08);
@@ -165,8 +165,9 @@ body {
   transition: all 0.25s ease;
 }
 
-/* Cards */
-.vuexy-card {
+/* Cards - Vuexy style with proper padding */
+.vuexy-card,
+.card {
   background: var(--vuexy-card-bg);
   border: 1px solid var(--vuexy-border);
   border-radius: 0.5rem;
@@ -175,21 +176,29 @@ body {
   transition: all 0.2s ease;
 }
 
-.vuexy-card:hover {
+.vuexy-card:hover,
+.card:hover {
   box-shadow: var(--vuexy-shadow-lg);
 }
 
-.vuexy-card .card-header {
-  background: transparent;
+.vuexy-card .card-header,
+.card .card-header {
+  background: transparent !important;
   border-bottom: 1px solid var(--vuexy-border);
-  padding: 1.25rem 1.5rem;
-}
-
-.vuexy-card .card-body {
   padding: 1.5rem;
+  margin: 0;
 }
 
-.vuexy-card .card-title {
+.vuexy-card .card-body,
+.card .card-body {
+  padding: 1.5rem;
+  margin: 0;
+  background: transparent !important;
+  color: var(--vuexy-text);
+}
+
+.vuexy-card .card-title,
+.card .card-title {
   color: var(--vuexy-heading);
   font-weight: 600;
   font-size: 1.125rem;
@@ -300,6 +309,18 @@ body {
   color: #fff;
 }
 
+.btn-primary {
+  background: var(--vuexy-primary);
+  border-color: var(--vuexy-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--vuexy-primary-dark);
+  border-color: var(--vuexy-primary-dark);
+  color: #fff;
+}
+
 /* Tables */
 .vuexy-table,
 .table {
@@ -310,19 +331,19 @@ body {
 
 .vuexy-table thead th,
 .table thead th {
-  background: var(--vuexy-bg);
+  background: #f8f7fa;
   color: var(--vuexy-text-dark);
   font-weight: 600;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 0.875rem 1rem;
-  border-bottom: 2px solid var(--vuexy-border);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--vuexy-border);
 }
 
 .vuexy-table tbody td,
 .table tbody td {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   vertical-align: middle;
   border-bottom: 1px solid var(--vuexy-border);
   color: var(--vuexy-text);
@@ -331,6 +352,15 @@ body {
 .vuexy-table tbody tr:hover,
 .table tbody tr:hover {
   background: #fafafa;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 /* Forms - Vuexy Style */
@@ -373,29 +403,6 @@ body {
   opacity: 1;
 }
 
-.vuexy-form-control {
-  background: #fff;
-  border: 1px solid var(--vuexy-input-border);
-  color: var(--vuexy-input-text);
-  padding: 0.571rem 1rem;
-  border-radius: 0.357rem;
-  transition: all 0.2s ease;
-}
-
-.vuexy-form-control:focus {
-  background: #fff;
-  border-color: var(--vuexy-primary);
-  color: var(--vuexy-input-text);
-  box-shadow: 0 3px 10px 0 rgba(118, 159, 205, 0.1);
-}
-
-.vuexy-form-label {
-  color: var(--vuexy-text-dark);
-  font-weight: 500;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
 /* Input groups */
 .input-group-text {
   background: #fff;
@@ -426,7 +433,7 @@ body {
   font-weight: 500;
 }
 
-/* Form sections with background */
+/* Form sections - Vuexy card style */
 .form-section {
   background: var(--vuexy-card-bg);
   border: 1px solid var(--vuexy-border);
@@ -438,33 +445,11 @@ body {
 
 .form-section-title {
   color: var(--vuexy-heading);
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--vuexy-border);
-}
-
-.form-section .form-label {
-  color: var(--vuexy-text-dark);
-  font-weight: 500;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.form-section .form-control,
-.form-section .form-select {
-  background: #fff;
-  border: 1px solid var(--vuexy-input-border);
-  color: var(--vuexy-input-text);
-  border-radius: 0.357rem;
-}
-
-.form-section .form-control:focus,
-.form-section .form-select:focus {
-  background: #fff;
-  border-color: var(--vuexy-primary);
-  box-shadow: 0 3px 10px 0 rgba(118, 159, 205, 0.1);
 }
 
 /* Section with colored accent */
@@ -522,19 +507,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Override Bootstrap primary color */
-.btn-primary {
-  background: var(--vuexy-primary);
-  border-color: var(--vuexy-primary);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--vuexy-primary-dark);
-  border-color: var(--vuexy-primary-dark);
-  color: #fff;
-}
-
+/* Text colors */
 .text-primary {
   color: var(--vuexy-primary) !important;
 }
@@ -543,192 +516,10 @@ body {
   background-color: var(--vuexy-primary) !important;
 }
 
-/* Text colors */
 .text-muted {
   color: var(--vuexy-text-muted) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--vuexy-heading);
-}
-
-/* List/Table container styling */
-.table-responsive {
-  background: var(--vuexy-card-bg);
-  border: 1px solid var(--vuexy-border);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: var(--vuexy-shadow);
-}
-
-.card {
-  background: var(--vuexy-card-bg) !important;
-  border: 1px solid var(--vuexy-border);
-  border-radius: 0.5rem;
-  box-shadow: var(--vuexy-shadow);
-}
-
-.card .card-header {
-  background: transparent !important;
-  border-bottom: 1px solid var(--vuexy-border);
-  color: var(--vuexy-heading);
-}
-
-.card .card-body {
-  background: transparent !important;
-  color: var(--vuexy-text);
-}
-
-.card .card-title {
-  color: var(--vuexy-heading);
-  font-weight: 600;
-}
-
-/* Ensure all table wrappers have proper background */
-.vuexy-card table,
-.card table,
-.table-responsive table {
-  background: transparent;
-}
-
-/* Form section title improvements */
-.form-section-title {
-  color: var(--vuexy-heading);
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.875rem;
-  padding-left: 0;
-  margin-left: 0;
-  border-bottom: 1px solid var(--vuexy-border);
-  letter-spacing: -0.01em;
-}
-
-/* Row spacing in forms */
-.form-section .row {
-  margin-bottom: 1rem;
-}
-
-.form-section .row:last-child {
-  margin-bottom: 0;
-}
-
-/* Column spacing */
-.form-section [class*="col-"] {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-/* Form group spacing */
-.form-section .mb-3 {
-  margin-bottom: 1rem !important;
-}
-
-/* Button alignment */
-.form-section .text-end,
-.form-section .d-flex.justify-content-end {
-  margin-top: 1rem;
-}
-
-/* Consistent spacing for all form elements */
-.form-section > *:first-child {
-  margin-top: 0;
-}
-
-.form-section > *:last-child {
-  margin-bottom: 0;
-}
-
-/* Form section title - flush left alignment */
-.form-section-title {
-  color: var(--vuexy-heading);
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 1.5rem 0;
-  padding: 0 0 0.875rem 0;
-  border-bottom: 1px solid var(--vuexy-border);
-  letter-spacing: -0.01em;
-}
-
-/* Remove any inherited padding from form-section */
-.form-section {
-  background: var(--vuexy-card-bg);
-  border: 1px solid var(--vuexy-border);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--vuexy-shadow);
-}
-
-/* Ensure form labels are also flush left */
-.form-section .form-label {
-  color: var(--vuexy-text-dark);
-  font-weight: 500;
-  font-size: 0.875rem;
-  margin: 0 0 0.5rem 0;
-  padding: 0;
-  display: block;
-}
-
-/* Row spacing in forms */
-.form-section .row {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-bottom: 1rem;
-}
-
-.form-section .row:last-child {
-  margin-bottom: 0;
-}
-
-/* Column spacing */
-.form-section [class*="col-"] {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-/* Form group spacing */
-.form-section .mb-3 {
-  margin-bottom: 1rem !important;
-}
-
-/* Button alignment */
-.form-section .text-end,
-.form-section .d-flex.justify-content-end {
-  margin-top: 1rem;
-}
-
-/* Consistent spacing for all form elements */
-.form-section > *:first-child {
-  margin-top: 0;
-}
-
-.form-section > *:last-child {
-  margin-bottom: 0;
-}
-
-/* Table/List card titles */
-.vuexy-card .card-title,
-.card .card-title {
-  color: var(--vuexy-heading);
-  font-weight: 600;
-  font-size: 1.125rem;
-  margin: 0;
-  padding: 0;
-}
-
-/* Card header spacing */
-.vuexy-card .card-header,
-.card .card-header {
-  background: transparent !important;
-  border-bottom: 1px solid var(--vuexy-border);
-  color: var(--vuexy-heading);
-  padding: 1.25rem 1.5rem;
-  margin: 0;
-}
-
-.vuexy-card .card-body,
-.card .card-body {
-  padding: 1.5rem;
-  margin: 0;
 }
