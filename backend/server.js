@@ -61,6 +61,13 @@ CREATE TABLE IF NOT EXISTS income (
   created_at TEXT DEFAULT (datetime('now'))
 );
 
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
 CREATE INDEX IF NOT EXISTS idx_income_date ON income(date);
 CREATE INDEX IF NOT EXISTS idx_income_email ON income(email_id);
 CREATE INDEX IF NOT EXISTS idx_income_paypal ON income(paypal_id);
@@ -85,10 +92,31 @@ if (emailCount === 0) {
     ['2025-01-05', 27.08, 0.53],
   ];
   for (const [d,g,f] of seed) incStmt.run(d, e1.lastInsertRowid, p1.lastInsertRowid, g, f, g - f);
+// Seed default admin user if not exists
+const userCount = db.prepare("SELECT COUNT(*) as count FROM users").get();
+if (userCount.count === 0) {
+  db.prepare("INSERT INTO users (username, password) VALUES (?, ?)").run("Admin", "Calomam@12@@");
+}
   console.log('Seeded initial data.');
 }
 
 // -------- Emails CRUD --------
+// ===== AUTH =====
+app.post('/api/login', (req,res) => {
+  const { username, password } = req.body;
+  if (!username || !password) return res.json({ ok: false, error: 'Username and password required' });
+  try {
+    const user = db.prepare('SELECT * FROM users WHERE username = ? AND password = ?').get(username, password);
+    if (user) {
+      return res.json({ ok: true, user: { id: user.id, username: user.username } });
+    }
+    return res.json({ ok: false, error: 'Invalid credentials' });
+  } catch (e) {
+    return res.json({ ok: false, error: e.message });
+  }
+});
+
+
 app.get('/api/emails', (req,res) => {
   const rows = db.prepare(`
     SELECT e.*, 
