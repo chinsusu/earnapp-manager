@@ -523,3 +523,25 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--vuexy-heading);
 }
+/* Cache bust 1761113519 */
+
+/* Direct content in vuexy-card needs padding */
+.vuexy-card > div:not(.card-header):not(.card-body),
+.vuexy-card > h1, .vuexy-card > h2, .vuexy-card > h3, 
+.vuexy-card > h4, .vuexy-card > h5, .vuexy-card > h6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.vuexy-card > div:first-child {
+  padding-top: 1.5rem;
+}
+
+.vuexy-card > div:last-child {
+  padding-bottom: 1.5rem;
+}
+
+/* If vuexy-card doesn't have card-body, apply padding */
+.vuexy-card:not(:has(.card-body)) {
+  padding: 1.5rem;
+}
